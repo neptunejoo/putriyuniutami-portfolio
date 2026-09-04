@@ -305,6 +305,20 @@ main { margin-left: 260px; }
   border-radius: 1px; display: block;
 }
 .card.featured .card-img { height: 195px; }
+/* Full-image variant: shows the entire image (e.g. a newspaper clipping)
+   instead of cropping it. Applied per-card via the extra "contain" class
+   so the default thumbnail cards above are unaffected. */
+.card-img.contain,
+.card.featured .card-img.contain {
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255,255,255,0.04);
+}
+@media (max-width: 600px) {
+  .card-img.contain { max-height: 320px; }
+}
 .card-pub {
   font-size: 0.62rem; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--primary); font-weight: 500;
@@ -581,7 +595,7 @@ footer a:hover { color: var(--primary); }
     </p>
     <div class="port-hero-stats">
       <div class="port-stat">
-        <div class="port-stat-num">26</div>
+        <div class="port-stat-num">27</div>
         <div class="port-stat-label">Published Articles</div>
       </div>
       <div class="port-stat">
@@ -627,10 +641,43 @@ footer a:hover { color: var(--primary); }
     <div class="port-section-hd fade-in" id="hd-jp">
       <span class="port-sec-num">01</span>
       <span class="port-sec-name">The Jakarta Post</span>
-      <span class="port-sec-count">5 articles</span>
+      <span class="port-sec-count">6 articles</span>
     </div>
 
     <div class="cards-grid">
+
+      <a class="card featured"
+         href="https://www.thejakartapost.com/culture/2026/09/03/burning-inside-out-gerds-quiet-toll-on-young-women"
+         target="_blank"
+         data-cats="jakarta-post health wellness culture">
+
+        <span class="card-pub">The Jakarta Post · Feature</span>
+
+        <img class="card-img contain"
+             src="/images/burning-inside-out-gerd-young-women-jakarta-post.jpg"
+             alt="Burning Inside Out: GERD’s Quiet Toll on Young Women">
+
+        <span class="card-title">
+          Burning Inside Out: GERD’s Quiet Toll on Young Women
+        </span>
+
+        <span class="card-desc">
+          A reported feature exploring how GERD, stress and overwork are affecting
+          young Indonesian women, told through the experiences of patients and
+          medical professionals.
+        </span>
+
+        <div class="card-footer">
+          <span class="card-year">Sep 2026</span>
+          <div class="card-tags">
+            <span class="card-tag">Health</span>
+            <span class="card-tag">Women</span>
+            <span class="card-tag">Society</span>
+            <span class="card-tag">Feature</span>
+          </div>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
 
       <a class="card featured" href="https://www.thejakartapost.com/culture/2023/01/30/navigating-dyslexia-in-indonesia.html" target="_blank" data-cats="jakarta-post culture health">
         <span class="card-pub">The Jakarta Post · Feature</span>
